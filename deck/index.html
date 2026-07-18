@@ -1,3 +1,4 @@
+<!-- pkg96a — OG hotfix: deck page had no og:/twitter: tags so shares rendered no card; added full block mirroring the root page pattern, reusing the existing og-image.png?v=2 card, canonical + og:url point at /deck/ — delivered 2026-07-18 -->
 <!-- pkg96 — interactive sales deck published at /deck/: uploaded standalone bundle verbatim; head-only fixes (title was "Bundled Page", added lang/viewport/description); bundler machinery untouched — delivered 2026-07-18 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LawMighty — Overview</title>
   <meta name="description" content="An 11-slide overview of LawMighty: flat $29.99/month practice management for small law firms. Unlimited users, no per-seat tax.">
+  <link rel="canonical" href="https://lawmighty.com/deck/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lawmighty">
+  <meta property="og:title" content="LawMighty — Overview">
+  <meta property="og:description" content="An 11-slide overview of LawMighty: flat $29.99/month practice management for small law firms. Unlimited users, no per-seat tax.">
+  <meta property="og:url" content="https://lawmighty.com/deck/">
+  <meta property="og:image" content="https://lawmighty.com/og-image.png?v=2">
+  <meta property="og:image:secure_url" content="https://lawmighty.com/og-image.png?v=2">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Lawmighty — practice management software, $29.99 per month per firm, unlimited users.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lawmighty.com/og-image.png?v=2">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
