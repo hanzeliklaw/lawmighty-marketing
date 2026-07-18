@@ -1,3 +1,4 @@
+<!-- pkg96 — deck published: interactive deck at /deck/ (new deck/index.html) + downloadable PDF at /LawMighty-Overview.pdf; hero gains third ghost button "View the deck", PDF download link added under the pricing table disclaimer, both links repeated in footer; sitemap gains /deck/ — delivered 2026-07-18 -->
 <!-- pkg88 — soft-launch positioning: all five "Launching 2026" strings -> "Now in private beta"; noindex REMOVED (Ryan: index it, maximize SEO); the notify form now carries a REAL action= to Basin (https://usebasin.com/f/1b184db0acaf) plus a fetch handler that shows the thank-you ONLY on a 2xx and falls back to a native POST otherwise -- it previously ran preventDefault() and a TODO, so the success message rendered over a discarded address; canonical + schema.org SoftwareApplication added; og-image.png REGENERATED (the "LAUNCHING 2026" line was baked into the pixels — painted out at y=556..600 with the exact #121D41 background; every other element untouched) and og:image/twitter:image bumped to ?v=2 so scrapers holding the old card re-fetch (the Session-24 cache issue: the URL never changed); NO signup link yet, per Ryan -- that waits on testing, pkg71 referral, and the community module -- delivered 2026-07-15 -->
 <!-- pkg85 — site ownership updated to LawMighty, LLC (Tennessee LLC formed + EIN obtained, July 2026): footer copyright names the entity; entity-of-record line added — delivered 2026-07-15 -->
 <!DOCTYPE html>
@@ -304,6 +305,7 @@
       <div class="hero-cta">
         <a href="#early" class="btn btn-primary">Request early access</a>
         <a href="#compare" class="btn btn-ghost">See how we compare</a>
+        <a href="/deck/" class="btn btn-ghost">View the deck</a>
       </div>
     </div>
   </header>
@@ -414,6 +416,7 @@
           </table>
         </div>
         <p class="disclaimer">Competitor figures are published per-user list pricing as of June 2026, calculated at the named tier with annual billing where it lowers the price, and exclude payment-processing fees, add-on products, and onboarding charges. Lawmighty's price is the flat per-firm subscription; AI-powered generation is billed per transaction at minimal cost. Pricing changes often — verify current rates directly with each vendor.</p>
+        <p class="disclaimer" style="margin-top:1rem;"><a href="/LawMighty-Overview.pdf" style="color:var(--terra);font-weight:600;">Download the overview (PDF) &rarr;</a> &nbsp;&middot;&nbsp; <a href="/deck/" style="color:var(--terra);font-weight:600;">or view the deck in your browser &rarr;</a></p>
       </div>
     </section>
 
@@ -506,6 +509,7 @@
     <p>© 2026 LawMighty, LLC. All rights reserved. &nbsp;·&nbsp; <span class="accent">Built in Tennessee.</span></p>
     <p class="disc">Lawmighty is a product of LawMighty, LLC, a Tennessee limited liability company.</p>
     <p class="disc">Comparison reflects published vendor pricing as of June 2026. Clio, Smokeball, PracticePanther, and MyCase are trademarks of their respective owners.</p>
+    <p class="disc"><a href="/deck/" style="color:var(--terra);">View the deck</a> &nbsp;&middot;&nbsp; <a href="/LawMighty-Overview.pdf" style="color:var(--terra);">Download the overview (PDF)</a></p>
   </footer>
 
   <script>
