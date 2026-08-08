@@ -1,3 +1,4 @@
+<!-- pkg140 — Android launch: official "Get it on Google Play" badge (Google-hosted artwork, unmodified, links to live listing) added to the still-building mobile bullet with "iOS in final App Store review" line; comparison cell "in beta testing" → "Android live" + "iOS in review" note; footer gains Google Play trademark attribution; Apple badge markup STAGED IN COMMENTS ONLY (Apple badge may not appear until the app is live — swap in on clearance) — delivered 2026-08-08 -->
 <!-- pkg104 — mobile-app status refresh: comparison table cell "in development" → "in beta testing"; still-building bullet now reads "developed and in beta testing"; no other changes — delivered 2026-07-27 -->
 <!-- pkg97 — footer gains "LawMighty on LinkedIn" link (https://www.linkedin.com/company/lawmighty) on the existing deck/PDF line, same terra style, target=_blank rel=noopener; no other changes — delivered 2026-07-18 -->
 <!-- pkg96 — deck published: interactive deck at /deck/ (new deck/index.html) + downloadable PDF at /LawMighty-Overview.pdf; hero gains third ghost button "View the deck", PDF download link added under the pricing table disclaimer, both links repeated in footer; sitemap gains /deck/ — delivered 2026-07-18 -->
@@ -156,6 +157,13 @@
   .card.win li::before { content: "→"; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
   .card.grow li::before { content: "↗"; position: absolute; left: 0; color: var(--navy); font-weight: 700; }
   .card li span { color: var(--muted); }
+  /* pkg140 — store badge row inside the mobile-apps bullet. Google's official badge PNG
+     carries built-in padding, so it renders at 60px to visually match a 40px Apple badge
+     (staged). Badge artwork is Google-hosted and unmodified per brand guidelines. */
+  .store-badges { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin-top: 10px; }
+  .badge-play { height: 60px; width: auto; display: block; margin-left: -10px; }
+  .badge-apple { height: 40px; width: auto; display: block; }
+  .badge-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
 
   /* ───────── Early access (closing CTA + form) ───────── */
   .early {
@@ -455,7 +463,7 @@
               <tr><td>Automatic time capture</td><td class="us" data-label="Lawmighty"><span class="no">—</span></td><td data-label="Clio"><span class="partial">partial</span></td><td data-label="Smokeball"><span class="yes">✓</span> AutoTime</td><td data-label="PracticePanther"><span class="no">—</span></td><td data-label="MyCase"><span class="no">—</span></td></tr>
               <tr><td>Native e-signature</td><td class="us" data-label="Lawmighty"><span class="partial">roadmap</span></td><td data-label="Clio"><span class="partial">add-on</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span> Pro+</td></tr>
               <tr><td>Built-in payments</td><td class="us" data-label="Lawmighty"><span class="partial">LawPay soon</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span> LawPay</td></tr>
-              <tr><td>Native mobile apps</td><td class="us" data-label="Lawmighty"><span class="partial">in beta testing</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
+              <tr><td>Native mobile apps</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> Android<span class="note-sm">iOS in review</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
               <tr><td>Integration marketplace</td><td class="us" data-label="Lawmighty"><span class="partial">in development</span></td><td data-label="Clio"><span class="yes">✓</span> 250+</td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
             </tbody>
           </table>
@@ -479,7 +487,15 @@
           <div class="card grow">
             <h3>Where we're still building</h3>
             <ul>
-              <li><strong>Native mobile apps.</strong> <span>Fully responsive on every device today; dedicated iOS and Android apps are developed and in beta testing.</span></li>
+              <li><strong>Native mobile apps.</strong> <span>The Android app is live on Google Play today. The iOS app is complete and in final App Store review.</span>
+                <div class="store-badges">
+                  <!-- pkg140 STAGED — Apple badge goes FIRST in this lineup when the app clears review (Apple guideline: preferred black badge leads when multiple platform badges appear). Generate the hosted black badge + link at https://tools.applemediaservices.com (App Store Marketing Tools), then insert here, height 40px:
+                  <a href="APPLE_APP_STORE_URL" target="_blank" rel="noopener"><img class="badge-apple" alt="Download on the App Store" src="APPLE_BADGE_SVG_URL"></a>
+                  Also uncomment the Apple attribution line in the footer. -->
+                  <a href="https://play.google.com/store/apps/details?id=com.lawmighty.app&amp;hl=en_US" target="_blank" rel="noopener"><img class="badge-play" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a>
+                  <span class="badge-note">iOS app coming to the App&nbsp;Store — in final review.</span>
+                </div>
+              </li>
               <li><strong>Built-in payments.</strong> <span>LawPay integration is in progress so clients can pay straight from the portal.</span></li>
               <li><strong>Integration ecosystem.</strong> <span>The community template marketplace is our long-game answer to incumbent app stores.</span></li>
               <li><strong>e-Signature.</strong> <span>Native signing is planned to round out the document workflow.</span></li>
@@ -511,6 +527,9 @@
     <p>© 2026 LawMighty, LLC. All rights reserved. &nbsp;·&nbsp; <span class="accent">Built in Tennessee.</span></p>
     <p class="disc">Lawmighty is a product of LawMighty, LLC, a Tennessee limited liability company.</p>
     <p class="disc">Comparison reflects published vendor pricing as of June 2026. Clio, Smokeball, PracticePanther, and MyCase are trademarks of their respective owners.</p>
+    <p class="disc">Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    <!-- pkg140 STAGED — uncomment when the Apple badge goes live:
+    <p class="disc">Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p> -->
     <p class="disc"><a href="/deck/" style="color:var(--terra);">View the deck</a> &nbsp;&middot;&nbsp; <a href="/LawMighty-Overview.pdf" style="color:var(--terra);">Download the overview (PDF)</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/company/lawmighty" style="color:var(--terra);" target="_blank" rel="noopener">LawMighty on LinkedIn</a></p>
   </footer>
 
