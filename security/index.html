@@ -1,1 +1,138 @@
+<!-- pkg157 — NEW PAGE: /security/ — the plain-English security story for skeptical attorneys (the cold-email landing companion): database-enforced tenant isolation (fail-closed), encryption in transit + at rest (AES-256 incl. backups, verified against Render managed-Postgres docs), role-based access + activity logging, login protections + on-device biometrics, AI confidentiality (firm owns Firm Data, never sold, never used to train models, Anthropic under commercial API terms, user-initiated only), Stripe-hosted payments, and the honest-limits close aligned with the Terms; deliberately NO claims of MFA / pen testing / SOC 2 (not yet true — add only when they are). Design tokens and footer mirror index.html — delivered 2026-08-18 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security — Lawmighty</title>
+<meta name="description" content="How Lawmighty protects law firm data: database-enforced isolation, encryption in transit and at rest, strict AI confidentiality, and payments that never touch our servers.">
+<meta name="theme-color" content="#16224a">
+<link rel="canonical" href="https://lawmighty.com/security/">
+<meta property="og:title" content="Security — Lawmighty">
+<meta property="og:description" content="Straight answers about how Lawmighty protects your firm's data — written by an attorney whose own client files live on the same system.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lawmighty.com/security/">
+<meta property="og:image" content="https://lawmighty.com/og-image.png?v=2">
+<style>
+  :root {
+    --navy-deep: #0F1838;
+    --navy-grad: #121D41;
+    --navy: #1E2761;
+    --cream: #F5F1E8;
+    --cream-2: #EDE6D6;
+    --terra: #B85042;
+    --terra-hover: #9F4338;
+    --terra-light: #E0998D;
+    --muted: #5a5648;
+    --display: Georgia, "Times New Roman", serif;
+    --body: Calibri, "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--body); background: var(--cream); color: #26221a; line-height: 1.6; }
+  h1, h2, h3 { font-family: var(--display); letter-spacing: -0.01em; font-weight: normal; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  header.hero { background: var(--navy-grad); color: var(--cream); text-align: center; padding: 4.5rem 1.5rem 4rem; }
+  .hero .kicker { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-light); font-weight: 700; display: block; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2.1rem, 5vw, 3rem); line-height: 1.1; margin-bottom: 0.9rem; }
+  .hero p.sub { font-family: var(--display); font-style: italic; color: var(--terra-light); max-width: 38rem; margin: 0 auto; font-size: 1.12rem; }
+  .rule { display: block; width: 56px; height: 2px; background: var(--terra); border: 0; margin: 2.5rem auto 1.5rem; }
+  main { padding: 3.5rem 0 4.5rem; }
+  section.block { margin-bottom: 2.75rem; }
+  section.block h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); margin-bottom: 0.75rem; color: var(--navy-deep); border-bottom: 2px solid var(--terra); padding-bottom: 0.5rem; }
+  section.block p { margin-bottom: 0.9rem; font-size: 1.04rem; }
+  section.block ul { margin: 0.25rem 0 0.9rem 1.25rem; }
+  section.block li { margin-bottom: 0.55rem; font-size: 1.04rem; }
+  .personal { background: #fff; border: 1px solid #e3ddd0; border-left: 4px solid var(--terra); border-radius: 8px; padding: 1.4rem 1.6rem; margin: 0 0 2.75rem; font-size: 1.06rem; }
+  .cta { text-align: center; margin-top: 3rem; }
+  .btn { display: inline-block; font-family: var(--body); font-size: 1rem; font-weight: 600; padding: 0.85rem 1.6rem; border-radius: 8px; text-decoration: none; background: var(--terra); color: #fff; }
+  .btn:hover { background: var(--terra-hover); }
+  .cta p.after { margin-top: 0.9rem; font-size: 0.95rem; color: var(--muted); }
+  .cta p.after a { color: var(--terra); }
+  footer { background: var(--navy-grad); color: var(--cream-2); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; line-height: 1.85; }
+  footer .accent { color: var(--terra-light); }
+  footer .disc { opacity: 0.75; }
+  footer a { color: var(--terra-light); }
+</style>
+</head>
+<body>
 
+<header class="hero">
+  <span class="kicker">Security at Lawmighty</span>
+  <h1>Straight answers about<br>how your data is protected.</h1>
+  <p class="sub">No buzzwords, no vague reassurances &mdash; here is what actually stands between your client files and everyone else.</p>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="personal">
+      <strong>First, the part no competitor can say:</strong> Lawmighty was built by a practicing Tennessee attorney, and his own firm's client files &mdash; privileged material, financial records, active family-law matters &mdash; live on this exact system, under the exact same protections described below. The security model isn't a sales page. It's what protects our founder's own clients every day.
+    </div>
+
+    <section class="block">
+      <h2>Your firm's data is walled off &mdash; by the database itself</h2>
+      <p>Every firm on Lawmighty is isolated using row-level security enforced by the database engine itself, not just by application code. In practice, that means the database refuses to return another firm's records even if a piece of application code were to ask incorrectly: the isolation <strong>fails closed</strong>. No request without your firm's verified context sees your data, period. We re-test this isolation every time the database structure changes.</p>
+    </section>
+
+    <section class="block">
+      <h2>Encrypted in transit and at rest</h2>
+      <p>Every connection to Lawmighty is encrypted in transit with TLS &mdash; browser, mobile apps, everything. And the data itself is encrypted at rest with AES-256 where it's stored, <strong>including backups</strong>. Stolen hardware yields ciphertext, not client files.</p>
+    </section>
+
+    <section class="block">
+      <h2>Inside your firm, access is role-based</h2>
+      <ul>
+        <li><strong>Clients see only their own matter.</strong> A client logging into the portal sees the forms, dates, and documents shared with them &mdash; never anything about another client.</li>
+        <li><strong>Staff access is permission-based.</strong> You decide what your staff can do; sensitive abilities are separate permissions you grant deliberately.</li>
+        <li><strong>Actions are logged.</strong> Significant actions in your firm's account are recorded &mdash; who did what, and when &mdash; so there's always an answer to that question.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Accounts and logins</h2>
+      <ul>
+        <li>Passwords are stored only as one-way cryptographic hashes &mdash; we never see, store, or transmit your actual password.</li>
+        <li>Sessions expire automatically, and repeated failed login attempts are rate-limited to shut down password-guessing.</li>
+        <li>Clients must set their own password on first login &mdash; temporary credentials never stay live.</li>
+        <li>On the mobile apps, fingerprint and face unlock are processed entirely on your device. Biometric data is never transmitted to us.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>The AI features and client confidentiality</h2>
+      <p>This is the question attorneys ask most, so here it is directly:</p>
+      <ul>
+        <li><strong>Your firm owns its data.</strong> That's written into our Terms of Service, not just this page.</li>
+        <li><strong>We never sell your data, and we never use it to train AI models.</strong></li>
+        <li>AI features run <strong>only when someone at your firm initiates them</strong> &mdash; nothing is analyzed in the background.</li>
+        <li>When you do run one, the content you submit is processed by our AI provider, Anthropic, under commercial API terms that restrict use of the data to providing the service and prohibit using it to train their models.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Payments</h2>
+      <p>All payments run through Stripe's own hosted checkout &mdash; <strong>your card number never touches Lawmighty's servers</strong>. Card storage, receipts, and payment security are handled by Stripe.</p>
+    </section>
+
+    <section class="block">
+      <h2>The honest part</h2>
+      <p>No system on earth is perfectly secure, and any vendor telling you otherwise is selling something. What we can tell you: the safeguards above protect our founder's own clients' files every day, and if a confirmed security incident ever affected your firm's data, you would be notified as applicable law requires. The complete commitments live in our <a href="https://app.lawmighty.com/terms" style="color:var(--terra);">Terms of Service</a> and <a href="https://app.lawmighty.com/privacy" style="color:var(--terra);">Privacy Policy</a>.</p>
+      <p>Have a security question this page didn't answer, or your own requirements to check against? Email <a href="mailto:mail@lawmighty.com" style="color:var(--terra);">mail@lawmighty.com</a> and you'll get an answer from the founder personally.</p>
+    </section>
+
+    <div class="cta">
+      <a class="btn" href="/#early">Apply for access</a>
+      <p class="after">Flat $29.99/month per firm. Unlimited users. <a href="/">Back to the main page &rarr;</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 LawMighty, LLC. All rights reserved. &nbsp;&middot;&nbsp; <span class="accent">Built in Tennessee.</span></p>
+  <p class="disc">Lawmighty is a product of LawMighty, LLC, a Tennessee limited liability company.</p>
+  <p class="disc"><a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/deck/">View the deck</a> &nbsp;&middot;&nbsp; <a href="/LawMighty-Overview.pdf">Download the overview (PDF)</a></p>
+</footer>
+
+</body>
+</html>
