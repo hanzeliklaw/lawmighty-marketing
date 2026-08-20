@@ -1,3 +1,4 @@
+<!-- pkg158a — discovery section copy fix (Aug 20): MightyAnalyzer™ card now covers criminal-defense discovery as well as civil responses (lede, one bullet, CTA fine print, meta description); the "up to 150MB" figure REMOVED pending confirmation of the live analyzer cap (env-tunable) — replaced with "large scanned productions included"; no structural changes — delivered 2026-08-20 -->
 <!-- pkg158 — DISCOVERY TOOLS on the marketing site (D-1..D-6, Aug 20): new navy #discovery section between "What's in the box" and the honesty cards naming MightyDiscovery™ (outgoing: complaint in → reviewed interrogatories/RFPs out as court-ready .docx) and MightyAnalyzer™ (incoming: the other side's production in → deficiencies, evasions, follow-ups, custom inquiry) plus a strip for portal-answered discovery responses; outcomes and inputs only — no report-kind list, no architecture, no model/pricing internals; hero gains a fourth button "See the discovery tools"; comparison table row split into two (drafting / production analysis) so incumbents show two dashes instead of one "add-on"; wins bullet names both tools; meta descriptions mention discovery; no screenshot (D-6: none). Both marks unregistered → ™ only — delivered 2026-08-20 -->
 <!-- pkg157 — SECURITY PAGE: new /security/ page (plain-English security story mirroring the platform's security email: database-enforced isolation, encryption in transit + at rest, access controls, AI confidentiality/no-training, Stripe payments, honest limits); footer gains a Security link on the terra line; sitemap gains /security/ — delivered 2026-08-18 -->
 <!-- pkg147 — OUT OF BETA / gated applications (D-147g): "Now in private beta" → "Now accepting applications" (hero status + all three meta descriptions); hero CTA "Request early access" → "Apply for access"; the #early Basin email-capture form is REPLACED by the full application form POSTing JSON to https://ryan-law-portal-backend.onrender.com/api/applications (applicant/firm/size/states/practice-areas/bar/message + visually-hidden 'website' honeypot); success shown ONLY on server 2xx ok:true (pkg88 principle — never a decoration over a discarded submission), inline error otherwise; Basin action retired — the form has NO native-POST fallback because the API expects JSON, so fetch-less browsers see the error line with the mail@lawmighty.com fallback — delivered 2026-08-15 -->
@@ -14,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lawmighty — Practice management software for small law firms</title>
-<meta name="description" content="One flat rate. Unlimited users. Practice management built by attorneys, for the small firms who actually need it — with MightyDiscovery™ and MightyAnalyzer™ discovery tools built in. See how Lawmighty compares to Clio, Smokeball, PracticePanther, and MyCase. Now accepting applications.">
+<meta name="description" content="One flat rate. Unlimited users. Practice management built by attorneys, for the small firms who actually need it — with MightyDiscovery™ and MightyAnalyzer™ discovery tools for civil and criminal-defense practice built in. See how Lawmighty compares to Clio, Smokeball, PracticePanther, and MyCase. Now accepting applications.">
 <meta name="theme-color" content="#16224a">
 <meta property="og:title" content="Lawmighty — Practice management software for small law firms">
 <meta property="og:description" content="One flat rate. Unlimited users. Built by attorneys, for the small firms who actually need it. Now accepting applications.">
@@ -538,9 +539,10 @@
           <div class="disc-card">
             <span class="eyebrow">Incoming production</span>
             <h3>MightyAnalyzer&trade;</h3>
-            <p class="lede">Upload the other side's responses and production &mdash; clean PDFs, scanned PDFs, photos, legacy Word files, up to 150MB &mdash; and get back what's missing, what's evasive, and what deserves a follow-up.</p>
+            <p class="lede">Upload what came back &mdash; the other side's responses in a civil case, or the State's discovery in a criminal one. Clean PDFs, scanned PDFs, photos, legacy Word files, large scanned productions included. Get back what's missing, what's evasive, and what deserves a follow-up.</p>
             <ul>
               <li>Reads scanned and photographed documents, not just text PDFs</li>
+              <li>Built for civil discovery responses and criminal-defense discovery alike</li>
               <li>Flags deficient, evasive and non-responsive answers request by request</li>
               <li>Lines up what was asked against what was actually produced</li>
               <li>Ask it your own questions about a production in plain English</li>
@@ -555,7 +557,7 @@
         </div>
         <div class="disc-cta">
           <a href="#early" class="btn btn-primary">Apply for access</a>
-          <span class="fine">If your firm does contested divorces or civil litigation, this is the part of Lawmighty worth applying for.</span>
+          <span class="fine">If your firm does contested divorces, civil litigation, or criminal defense, this is the part of Lawmighty worth applying for.</span>
         </div>
       </div>
     </section>
