@@ -1,3 +1,4 @@
+<!-- pkg158b — discovery strip (Aug 20): "Pay per use, not per tier" cell now states the cost case (a full MightyAnalyzer™ run around $20 vs. $600+ of billable time) and that a run can be passed through to the client as a case cost; new fourth cell "Runs in the background" (start it, keep working, get told when it's ready); strip goes 3 → 4 cells in a 2×2 grid (1 col on mobile); no other changes — delivered 2026-08-20 -->
 <!-- pkg158a — discovery section copy fix (Aug 20): MightyAnalyzer™ card now covers criminal-defense discovery as well as civil responses (lede, one bullet, CTA fine print, meta description); the "up to 150MB" figure REMOVED pending confirmation of the live analyzer cap (env-tunable) — replaced with "large scanned productions included"; no structural changes — delivered 2026-08-20 -->
 <!-- pkg158 — DISCOVERY TOOLS on the marketing site (D-1..D-6, Aug 20): new navy #discovery section between "What's in the box" and the honesty cards naming MightyDiscovery™ (outgoing: complaint in → reviewed interrogatories/RFPs out as court-ready .docx) and MightyAnalyzer™ (incoming: the other side's production in → deficiencies, evasions, follow-ups, custom inquiry) plus a strip for portal-answered discovery responses; outcomes and inputs only — no report-kind list, no architecture, no model/pricing internals; hero gains a fourth button "See the discovery tools"; comparison table row split into two (drafting / production analysis) so incumbents show two dashes instead of one "add-on"; wins bullet names both tools; meta descriptions mention discovery; no screenshot (D-6: none). Both marks unregistered → ™ only — delivered 2026-08-20 -->
 <!-- pkg157 — SECURITY PAGE: new /security/ page (plain-English security story mirroring the platform's security email: database-enforced isolation, encryption in transit + at rest, access controls, AI confidentiality/no-training, Stripe payments, honest limits); footer gains a Security link on the terra line; sitemap gains /security/ — delivered 2026-08-18 -->
@@ -226,7 +227,7 @@
   .disc-card li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid rgba(245,241,232,0.1); color: rgba(245,241,232,0.9); }
   .disc-card li:last-child { border-bottom: none; }
   .disc-card li::before { content: "✓"; position: absolute; left: 0; color: var(--terra-light); font-weight: 700; }
-  .disc-strip { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+  .disc-strip { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .disc-strip div { background: rgba(255,255,255,0.04); border: 1px solid rgba(245,241,232,0.12); border-radius: 10px; padding: 1.1rem 1.25rem; font-size: 0.95rem; color: rgba(245,241,232,0.85); }
   .disc-strip strong { display: block; color: #fff; font-family: var(--display); font-weight: normal; font-size: 1.1rem; margin-bottom: 0.25rem; }
   .disc-cta { margin-top: 2.25rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
@@ -552,7 +553,8 @@
         </div>
         <div class="disc-strip">
           <div><strong>Responses, too</strong>Send incoming requests to your client through the portal. They answer online; you review and generate the response document.</div>
-          <div><strong>Pay per use, not per tier</strong>AI runs are metered by credit. A failed run never costs a credit. There is no "AI plan" to upgrade to.</div>
+          <div><strong>Pay per use, not per tier</strong>AI runs are metered by credit &mdash; no "AI plan" to upgrade to, and a failed run never costs a credit. A full MightyAnalyzer&trade; pass on a production runs around $20. Done by hand, the same review is hours of attorney or paralegal time &mdash; $600 or more at billable rates. And because it's a discrete case cost, you can pass the run through to the client instead of eating the hours.</div>
+          <div><strong>Runs in the background</strong>Start an analysis and go back to work. It runs while you do other things and tells you when the report is ready &mdash; nobody sits and watches a progress bar.</div>
           <div><strong>Your file stays yours</strong>Firm data is never sold and never used to train models. See the <a href="/security/" style="color:var(--terra-light)">security page</a> for the specifics.</div>
         </div>
         <div class="disc-cta">
