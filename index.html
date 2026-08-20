@@ -1,3 +1,4 @@
+<!-- pkg158 — DISCOVERY TOOLS on the marketing site (D-1..D-6, Aug 20): new navy #discovery section between "What's in the box" and the honesty cards naming MightyDiscovery™ (outgoing: complaint in → reviewed interrogatories/RFPs out as court-ready .docx) and MightyAnalyzer™ (incoming: the other side's production in → deficiencies, evasions, follow-ups, custom inquiry) plus a strip for portal-answered discovery responses; outcomes and inputs only — no report-kind list, no architecture, no model/pricing internals; hero gains a fourth button "See the discovery tools"; comparison table row split into two (drafting / production analysis) so incumbents show two dashes instead of one "add-on"; wins bullet names both tools; meta descriptions mention discovery; no screenshot (D-6: none). Both marks unregistered → ™ only — delivered 2026-08-20 -->
 <!-- pkg157 — SECURITY PAGE: new /security/ page (plain-English security story mirroring the platform's security email: database-enforced isolation, encryption in transit + at rest, access controls, AI confidentiality/no-training, Stripe payments, honest limits); footer gains a Security link on the terra line; sitemap gains /security/ — delivered 2026-08-18 -->
 <!-- pkg147 — OUT OF BETA / gated applications (D-147g): "Now in private beta" → "Now accepting applications" (hero status + all three meta descriptions); hero CTA "Request early access" → "Apply for access"; the #early Basin email-capture form is REPLACED by the full application form POSTing JSON to https://ryan-law-portal-backend.onrender.com/api/applications (applicant/firm/size/states/practice-areas/bar/message + visually-hidden 'website' honeypot); success shown ONLY on server 2xx ok:true (pkg88 principle — never a decoration over a discarded submission), inline error otherwise; Basin action retired — the form has NO native-POST fallback because the API expects JSON, so fetch-less browsers see the error line with the mail@lawmighty.com fallback — delivered 2026-08-15 -->
 <!-- pkg145 — iOS LIVE (App Store approval, Aug 2026): staged pkg140 Apple badge UNCOMMENTED with the real listing URL (https://apps.apple.com/us/app/lawmighty/id6794940293), black badge leads the lineup per Apple guidelines, Google badge second, "in final review" badge-note removed. Mobile apps PROMOTED out of "Where we're still building" into "Where Lawmighty wins" as a fifth bullet ("Native mobile apps — now live") carrying both store badges — the still-building list keeps its three honest items (payments / integrations / e-signature). Comparison cell "✓ Android + iOS in review" → "✓ iOS & Android"; footer Apple/App Store trademark attribution uncommented. Badge artwork is Apple-hosted from App Store Marketing Tools, unmodified — delivered 2026-08-14 -->
@@ -13,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lawmighty — Practice management software for small law firms</title>
-<meta name="description" content="One flat rate. Unlimited users. Practice management built by attorneys, for the small firms who actually need it. See how Lawmighty compares to Clio, Smokeball, PracticePanther, and MyCase. Now accepting applications.">
+<meta name="description" content="One flat rate. Unlimited users. Practice management built by attorneys, for the small firms who actually need it — with MightyDiscovery™ and MightyAnalyzer™ discovery tools built in. See how Lawmighty compares to Clio, Smokeball, PracticePanther, and MyCase. Now accepting applications.">
 <meta name="theme-color" content="#16224a">
 <meta property="og:title" content="Lawmighty — Practice management software for small law firms">
 <meta property="og:description" content="One flat rate. Unlimited users. Built by attorneys, for the small firms who actually need it. Now accepting applications.">
@@ -209,12 +210,33 @@
   /* ───────── Footer ───────── */
   footer { background: var(--navy-grad); color: var(--cream-2); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; line-height: 1.85; }
   footer .disc { color: rgba(245,241,232,0.5); font-size: 0.74rem; max-width: 60ch; margin: 0.75rem auto 0; line-height: 1.5; }
+
+  /* ───────── pkg158 — Discovery tools band ───────── */
+  .disc { background: var(--navy); color: var(--cream); }
+  .disc .section-head .kicker { color: var(--terra-light); }
+  .disc .section-head h2 { color: #fff; }
+  .disc .section-head p { color: rgba(245,241,232,0.78); }
+  .disc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+  .disc-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(245,241,232,0.16); border-radius: 14px; padding: 2rem; }
+  .disc-card .eyebrow { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra-light); font-weight: 700; display: block; margin-bottom: 0.6rem; }
+  .disc-card h3 { font-size: 1.6rem; font-weight: normal; color: #fff; margin-bottom: 0.75rem; }
+  .disc-card .lede { color: rgba(245,241,232,0.85); font-size: 1.05rem; margin-bottom: 1.25rem; }
+  .disc-card ul { list-style: none; }
+  .disc-card li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid rgba(245,241,232,0.1); color: rgba(245,241,232,0.9); }
+  .disc-card li:last-child { border-bottom: none; }
+  .disc-card li::before { content: "✓"; position: absolute; left: 0; color: var(--terra-light); font-weight: 700; }
+  .disc-strip { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+  .disc-strip div { background: rgba(255,255,255,0.04); border: 1px solid rgba(245,241,232,0.12); border-radius: 10px; padding: 1.1rem 1.25rem; font-size: 0.95rem; color: rgba(245,241,232,0.85); }
+  .disc-strip strong { display: block; color: #fff; font-family: var(--display); font-weight: normal; font-size: 1.1rem; margin-bottom: 0.25rem; }
+  .disc-cta { margin-top: 2.25rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .disc-cta .fine { font-size: 0.9rem; color: rgba(245,241,232,0.7); }
   footer .accent { color: var(--terra-light); }
 
   @media (max-width: 760px) {
     .savings-band { grid-template-columns: repeat(2, 1fr); gap: 20px 8px; padding: 1.75rem; }
     .savings-cell:nth-child(2)::after { display: none; }
     .cols { grid-template-columns: 1fr; }
+    .disc-grid, .disc-strip { grid-template-columns: 1fr; }
     section { padding: 3.25rem 0; }
     .early { padding: 2.5rem 1.25rem; }
     .submit-btn { width: 100%; }
@@ -333,6 +355,7 @@
       <p class="status">Now accepting applications</p>
       <div class="hero-cta">
         <a href="#early" class="btn btn-primary">Apply for access</a>
+        <a href="#discovery" class="btn btn-ghost">See the discovery tools</a>
         <a href="#compare" class="btn btn-ghost">See how we compare</a>
         <a href="/deck/" class="btn btn-ghost">View the deck</a>
       </div>
@@ -474,7 +497,8 @@
               <tr><td>Time, billing &amp; invoicing</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
               <tr><td>Trust / IOLTA accounting</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="partial">Essential+</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
               <tr><td>Client portal</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span></td><td data-label="Clio"><span class="partial">Essentials+</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
-              <tr><td>AI discovery drafting &amp; extraction</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> built in</td><td data-label="Clio"><span class="partial">add-on</span></td><td data-label="Smokeball"><span class="partial">limited</span></td><td data-label="PracticePanther"><span class="no">—</span></td><td data-label="MyCase"><span class="partial">general AI</span></td></tr>
+              <tr><td>AI discovery drafting<span class="note-sm">MightyDiscovery™ — interrogatories &amp; RFPs drafted from the pleadings</span></td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> built in</td><td data-label="Clio"><span class="partial">add-on</span></td><td data-label="Smokeball"><span class="partial">limited</span></td><td data-label="PracticePanther"><span class="no">—</span></td><td data-label="MyCase"><span class="partial">general AI</span></td></tr>
+              <tr><td>Discovery production analysis<span class="note-sm">MightyAnalyzer™ — deficiencies &amp; evasions in the other side's responses</span></td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> built in</td><td data-label="Clio"><span class="no">—</span></td><td data-label="Smokeball"><span class="no">—</span></td><td data-label="PracticePanther"><span class="no">—</span></td><td data-label="MyCase"><span class="no">—</span></td></tr>
               <tr><td>Family-law depth<span class="note-sm">child support calc, parenting plans, juvenile forms</span></td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> out of the box</td><td data-label="Clio"><span class="partial">generic</span></td><td data-label="Smokeball"><span class="partial">strong forms</span></td><td data-label="PracticePanther"><span class="partial">generic</span></td><td data-label="MyCase"><span class="partial">generic</span></td></tr>
               <tr><td>Conflict checker &amp; contacts import</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
               <tr><td>One-click Clio data import</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span></td><td data-label="Clio"><span class="no">n/a</span></td><td data-label="Smokeball"><span class="partial">migration svc</span></td><td data-label="PracticePanther"><span class="partial">migration svc</span></td><td data-label="MyCase"><span class="partial">migration svc</span></td></tr>
@@ -490,6 +514,52 @@
       </div>
     </section>
 
+    <!-- DISCOVERY TOOLS (pkg158) -->
+    <section class="disc" id="discovery">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">The part no incumbent ships</span>
+          <h2>Discovery is where small firms bleed hours. We built two tools for it.</h2>
+          <p>Both came out of a working family-law caseload, not a product roadmap. Both are included with every firm account. Neither sends anything out the door without an attorney reviewing it first.</p>
+        </div>
+        <div class="disc-grid">
+          <div class="disc-card">
+            <span class="eyebrow">Outgoing discovery</span>
+            <h3>MightyDiscovery&trade;</h3>
+            <p class="lede">Upload the complaint. Get a first draft of interrogatories and requests for production, each tied to something actually alleged in the pleadings &mdash; ready for your edits, not a generic template.</p>
+            <ul>
+              <li>Drafted from your pleadings and any supporting documents you add</li>
+              <li>Optionally matched to the style of a set you've served before</li>
+              <li>Edit, exclude, or reorder every question before anything is generated</li>
+              <li>Caption, signature block, certificate of service and notary jurat filled from your firm settings</li>
+              <li>Exports as a court-ready Word document &mdash; no AI branding on anything you file</li>
+            </ul>
+          </div>
+          <div class="disc-card">
+            <span class="eyebrow">Incoming production</span>
+            <h3>MightyAnalyzer&trade;</h3>
+            <p class="lede">Upload the other side's responses and production &mdash; clean PDFs, scanned PDFs, photos, legacy Word files, up to 150MB &mdash; and get back what's missing, what's evasive, and what deserves a follow-up.</p>
+            <ul>
+              <li>Reads scanned and photographed documents, not just text PDFs</li>
+              <li>Flags deficient, evasive and non-responsive answers request by request</li>
+              <li>Lines up what was asked against what was actually produced</li>
+              <li>Ask it your own questions about a production in plain English</li>
+              <li>Output is a working draft for the attorney &mdash; you decide what becomes a deficiency letter or a motion</li>
+            </ul>
+          </div>
+        </div>
+        <div class="disc-strip">
+          <div><strong>Responses, too</strong>Send incoming requests to your client through the portal. They answer online; you review and generate the response document.</div>
+          <div><strong>Pay per use, not per tier</strong>AI runs are metered by credit. A failed run never costs a credit. There is no "AI plan" to upgrade to.</div>
+          <div><strong>Your file stays yours</strong>Firm data is never sold and never used to train models. See the <a href="/security/" style="color:var(--terra-light)">security page</a> for the specifics.</div>
+        </div>
+        <div class="disc-cta">
+          <a href="#early" class="btn btn-primary">Apply for access</a>
+          <span class="fine">If your firm does contested divorces or civil litigation, this is the part of Lawmighty worth applying for.</span>
+        </div>
+      </div>
+    </section>
+
     <!-- HONEST CONTRAST -->
     <section class="alt">
       <div class="wrap">
@@ -498,7 +568,7 @@
             <h3>Where Lawmighty wins</h3>
             <ul>
               <li><strong>Flat per-firm pricing.</strong> <span>Add staff without adding cost. A 5-person firm saves roughly $4,000–$5,000 a year.</span></li>
-              <li><strong>AI built into the workflow.</strong> <span>Discovery drafting and extraction are core features, not a premium upsell.</span></li>
+              <li><strong>AI built into the workflow.</strong> <span>MightyDiscovery™ drafting and MightyAnalyzer™ production analysis are core features, not a premium upsell — metered per use, never a tier.</span></li>
               <li><strong>Real family-law substance.</strong> <span>TN child support calculator, parenting plan generator, and juvenile forms ship working.</span></li>
               <li><strong>No tier hostage-taking.</strong> <span>Trust accounting, client portal, and document generation are all in the base price.</span></li>
               <li><strong>Native mobile apps — now live.</strong> <span>The iOS and Android apps are on the App&nbsp;Store and Google Play today, included in the flat price.</span>
