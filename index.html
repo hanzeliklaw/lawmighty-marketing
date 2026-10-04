@@ -1,3 +1,5 @@
+<!-- pkg178 v3 — band restyled as a headline card (terra rule, 48px logo, kicker 'A proud LawPay integration partner', h2 + copy + CTA; stacks on mobile) and #payments headline reworked; v2/v1 notes retained — delivered 2026-10-04 -->
+<!-- pkg178 v2 — PARTNERSHIP-GRADE PROMOTION: announcement band under the hero (logo + 'Now integrated with LawPay' + CTA), dedicated cream #payments section (three ways clients pay, trust routing, never-touches-the-money, Connect in a minute) with the logo at headline size, hero CTA 'See LawPay payments', meta description + sitemap untouched. v1 scope retained below. — delivered 2026-10-04 -->
 <!-- pkg178 — LAWPAY ON THE MARKETING SITE (Oct 4, 2026; campaign one of two per year under §3(b) of the 8am agreement; wording subject to 8am's §24 approval — DO NOT DEPLOY BEFORE THAT EMAIL): comparison cell "LawPay soon" → "✓ LawPay"; "Built-in payments" PROMOTED out of "Where we're still building" into "Where Lawmighty wins" as a sixth bullet carrying the 8am-supplied LawPay logo (lawpay-logo.svg, unmodified) and the exact "Connect with LawPay" wording, with honest fine print that firms go live as 8am completes certification; still-building list keeps integrations + e-signature. No rate, no revenue-share, no agreement reference anywhere — delivered 2026-10-04 -->
 <!-- pkg158b — discovery strip (Aug 20): "Pay per use, not per tier" cell now states the cost case (a full MightyAnalyzer™ run around $20 vs. $600+ of billable time) and that a run can be passed through to the client as a case cost; new fourth cell "Runs in the background" (start it, keep working, get told when it's ready); strip goes 3 → 4 cells in a 2×2 grid (1 col on mobile); no other changes — delivered 2026-08-20 -->
 <!-- pkg158a — discovery section copy fix (Aug 20): MightyAnalyzer™ card now covers criminal-defense discovery as well as civil responses (lede, one bullet, CTA fine print, meta description); the "up to 150MB" figure REMOVED pending confirmation of the live analyzer cap (env-tunable) — replaced with "large scanned productions included"; no structural changes — delivered 2026-08-20 -->
@@ -214,6 +216,30 @@
   footer { background: var(--navy-grad); color: var(--cream-2); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; line-height: 1.85; }
   footer .disc { color: rgba(245,241,232,0.5); font-size: 0.74rem; max-width: 60ch; margin: 0.75rem auto 0; line-height: 1.5; }
 
+  /* ───────── pkg178 v2 — LawPay partnership band + section ───────── */
+  .lp-band { background: #fff; border-top: 4px solid var(--terra); border-bottom: 1px solid var(--cream-2); box-shadow: 0 6px 18px rgba(15,24,56,0.08); }
+  .lp-band .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem 2.25rem; padding: 1.5rem 1.5rem; max-width: 64rem; margin: 0 auto; }
+  .lp-band img { height: 48px; width: auto; display: block; }
+  .lp-band .lp-copy .lp-kicker { display: block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); font-weight: 700; margin-bottom: 0.3rem; }
+  .lp-band .lp-copy h2 { font-size: 1.45rem; font-weight: normal; color: var(--navy-deep); margin: 0 0 0.3rem; line-height: 1.25; }
+  .lp-band .lp-copy p { margin: 0; font-size: 1rem; color: #444; line-height: 1.5; }
+  .lp-band a.btn { white-space: nowrap; }
+  @media (max-width: 760px) { .lp-band .wrap { grid-template-columns: 1fr; text-align: center; } .lp-band img { margin: 0 auto; } .lp-band a.btn { justify-self: center; } }
+  .pay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+  .pay-card { background: #fff; border: 1px solid var(--cream-2); border-radius: 14px; padding: 1.75rem; }
+  .pay-card .eyebrow { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); font-weight: 700; display: block; margin-bottom: 0.6rem; }
+  .pay-card h3 { font-size: 1.3rem; font-weight: normal; margin-bottom: 0.6rem; color: var(--navy-deep); }
+  .pay-card p { color: #444; font-size: 0.98rem; line-height: 1.55; }
+  .pay-trust { margin-top: 2rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+  .pay-trust ul { list-style: none; padding: 0; margin: 0.75rem 0 0; }
+  .pay-trust li { position: relative; padding-left: 1.4rem; margin: 0.45rem 0; color: #333; }
+  .pay-trust li::before { content: "→"; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+  .pay-lockup { text-align: center; background: #fff; border: 1px solid var(--cream-2); border-radius: 14px; padding: 2rem; }
+  .pay-lockup img { height: 56px; width: auto; display: inline-block; margin-bottom: 0.75rem; }
+  .pay-lockup p { font-size: 0.9rem; color: #555; margin: 0; }
+  .pay-lockup .btn { margin-top: 1rem; }
+  @media (max-width: 800px) { .pay-grid { grid-template-columns: 1fr; } .pay-trust { grid-template-columns: 1fr; } }
+
   /* ───────── pkg158 — Discovery tools band ───────── */
   .disc { background: var(--navy); color: var(--cream); }
   .disc .section-head .kicker { color: var(--terra-light); }
@@ -359,11 +385,25 @@
       <div class="hero-cta">
         <a href="#early" class="btn btn-primary">Apply for access</a>
         <a href="#discovery" class="btn btn-ghost">See the discovery tools</a>
+        <a href="#payments" class="btn btn-ghost">LawPay payments</a><!-- pkg178 v2 -->
         <a href="#compare" class="btn btn-ghost">See how we compare</a>
         <a href="/deck/" class="btn btn-ghost">View the deck</a>
       </div>
     </div>
   </header>
+
+  <!-- pkg178 v2 — LawPay partnership band -->
+  <div class="lp-band" role="note">
+    <div class="wrap">
+      <img src="/lawpay-logo.svg" alt="LawPay">
+      <div class="lp-copy">
+        <span class="lp-kicker">A proud LawPay integration partner</span>
+        <h2>Invoice, accept payment, and get paid &mdash; without leaving Lawmighty.</h2>
+        <p>Built on LawPay, the payment platform made for law firms. Your clients see their invoices and pay them in the same portal where they already work with you; retainers go to trust, fees to operating, and the ledger records itself.</p>
+      </div>
+      <a href="#payments" class="btn btn-primary">How it works</a>
+    </div>
+  </div>
 
   <main>
     <!-- PROMISE -->
@@ -518,6 +558,51 @@
     </section>
 
     <!-- DISCOVERY TOOLS (pkg158) -->
+    <!-- pkg178 v2 — PAYMENTS (LawPay partnership) -->
+    <section class="alt" id="payments">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="kicker">Get paid &middot; built on LawPay</span>
+          <h2>From time entry to paid invoice, without leaving Lawmighty.</h2>
+          <p>Generate the invoice, send it, and accept payment &mdash; card or eCheck &mdash; through LawPay. Your clients open their portal, see exactly what was billed, and pay it there. Retainers go to trust, fees go to operating, and every payment records itself.</p>
+        </div>
+        <div class="pay-grid">
+          <div class="pay-card">
+            <span class="eyebrow">In the client portal</span>
+            <h3>Pay now, on the invoice</h3>
+            <p>Clients open an invoice in their portal, see exactly what was billed, and pay it by card. The payment lands on that invoice the moment it's accepted.</p>
+          </div>
+          <div class="pay-card">
+            <span class="eyebrow">From an email</span>
+            <h3>Send a LawPay link</h3>
+            <p>One click on any invoice emails the client a LawPay link with the amount locked. Card or eCheck. When they pay, Lawmighty matches it and marks the invoice.</p>
+          </div>
+          <div class="pay-card">
+            <span class="eyebrow">Retainers</span>
+            <h3>Straight to trust</h3>
+            <p>Request a retainer by card and it goes to your <em>trust</em> account on LawPay's side &mdash; and onto the client's IOLTA ledger here only once it settles. It cannot be routed anywhere else.</p>
+          </div>
+        </div>
+        <div class="pay-trust">
+          <div>
+            <h3 style="font-size:1.35rem;font-weight:normal;color:var(--navy-deep)">Built the way a lawyer would insist on</h3>
+            <ul>
+              <li><strong>Lawmighty never touches the money.</strong> Funds move between your client and your own LawPay accounts under your agreement with LawPay.</li>
+              <li><strong>Card numbers never reach us.</strong> They're entered in fields served by LawPay; we record the outcome.</li>
+              <li><strong>Trust and operating can't be crossed.</strong> You map each account once; invoice payments always go to operating, retainers always to trust.</li>
+              <li><strong>Settled means settled.</strong> Every status you see comes from LawPay's own record, checked every hour.</li>
+            </ul>
+          </div>
+          <div class="pay-lockup">
+            <img src="/lawpay-logo.svg" alt="LawPay">
+            <p>Already on LawPay? <strong>Connect with LawPay</strong> from Firm Settings in about a minute. Not yet? We'll point you to the sign-up.</p>
+            <a href="#early" class="btn btn-primary">Apply for access</a>
+            <p style="margin-top:0.9rem;font-size:0.8rem;color:#777">Rolling out to firms as LawPay completes certification of the integration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="disc" id="discovery">
       <div class="wrap">
         <div class="section-head">
