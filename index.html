@@ -1,3 +1,4 @@
+<!-- payments live + mobile client portal (Nov 1): payments are a working feature — removed "Rolling out to firms as LawPay completes certification" and any coming-soon / in-testing payment wording; comparison checkmark kept; payment methods are "card or bank (eCheck)" everywhere (portal card, emailed link, retainers, wins bullet, partner band); Payments section adds the standard LawPay authorization before bank payments, saved bank account + autopay, a clear notice if the firm hasn't set up eCheck, refunds and voids done in LawPay showing as refunded on their own line in firm records and the client portal, and separate trust and operating accounts (invoices → operating, retainers → trust). Partner kicker "A proud 8am™ LawPay integration partner" unchanged. Native iOS and Android bullet and comparison row now say the apps include a client portal (case, documents, messages, invoices) and that paying an invoice opens securely in the phone's browser. deck/ and LawMighty-Overview.pdf not touched — delivered 2026-11-01 -->
 <!-- pkg183 — 8am request (Oct 14): the kicker's CSS uppercase was rendering "8AM™"; the brand name is now wrapped with text-transform:none so it reads "8am™" while the rest of the line stays uppercase — delivered 2026-10-14 -->
 <!-- pkg182 — 8am wording (Oct 8): first mention is exactly "A proud 8am™ LawPay integration partner"; later mentions stay plain "LawPay"; footer credit reads "8am™ and LawPay are trademarks of 8am, LLC" — delivered 2026-10-08 -->
 <!-- pkg181 — 8am review edits (Brandon, Oct 7): partner kicker now "A proud 8am + LawPay® integration partner"; MyCase pricing Basic $50 / Pro $100 / Advanced $130, Document generation ✓, Automatic time capture ✓ Smart Time Finder; Smokeball Boost = contact for quote (Bill $49 and Grow/Prosper+ quote unchanged); annual-cost table recomputed at MyCase Pro $100 and Smokeball Boost shown as quote-only; competitor pricing note refreshed — delivered 2026-10-07 -->
@@ -402,7 +403,7 @@
       <div class="lp-copy">
         <span class="lp-kicker">A proud <span style="text-transform:none">8am&trade;</span> LawPay integration partner</span>
         <h2>Invoice, accept payment, and get paid &mdash; without leaving Lawmighty.</h2>
-        <p>Built on LawPay, the payment platform made for law firms. Your clients see their invoices and pay them in the same portal where they already work with you; retainers go to trust, fees to operating, and the ledger records itself.</p>
+        <p>Built on LawPay, the payment platform made for law firms. Your clients see their invoices and pay them by card or bank (eCheck) in the same portal where they already work with you. Invoice payments go to operating, retainers go to trust, and the ledger records itself.</p>
       </div>
       <a href="#payments" class="btn btn-primary">How it works</a>
     </div>
@@ -552,7 +553,7 @@
               <tr><td>Automatic time capture</td><td class="us" data-label="Lawmighty"><span class="no">—</span></td><td data-label="Clio"><span class="partial">partial</span></td><td data-label="Smokeball"><span class="yes">✓</span> AutoTime</td><td data-label="PracticePanther"><span class="no">—</span></td><td data-label="MyCase"><span class="yes">✓</span> Smart Time Finder</td></tr>
               <tr><td>Native e-signature</td><td class="us" data-label="Lawmighty"><span class="partial">roadmap</span></td><td data-label="Clio"><span class="partial">add-on</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span> Pro+</td></tr>
               <tr><td>Built-in payments</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> LawPay</td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span> LawPay</td></tr>
-              <tr><td>Native mobile apps</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> iOS &amp; Android</td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
+              <tr><td>Native mobile apps</td><td class="us" data-label="Lawmighty"><span class="yes">✓</span> iOS &amp; Android<span class="note-sm" style="font-weight:400;max-width:16rem;margin-left:auto;margin-right:auto">Client portal in the app: clients sign in to see their case, documents, messages and invoices. Paying an invoice opens securely in the phone's browser.</span></td><td data-label="Clio"><span class="yes">✓</span></td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
               <tr><td>Integration marketplace</td><td class="us" data-label="Lawmighty"><span class="partial">in development</span></td><td data-label="Clio"><span class="yes">✓</span> 250+</td><td data-label="Smokeball"><span class="yes">✓</span></td><td data-label="PracticePanther"><span class="yes">✓</span></td><td data-label="MyCase"><span class="yes">✓</span></td></tr>
             </tbody>
           </table>
@@ -567,23 +568,23 @@
         <div class="section-head">
           <span class="kicker">Get paid &middot; built on LawPay</span>
           <h2>From time entry to paid invoice, without leaving Lawmighty.</h2>
-          <p>Generate the invoice, send it, and accept payment &mdash; card or eCheck &mdash; through LawPay. Your clients open their portal, see exactly what was billed, and pay it there. Retainers go to trust, fees go to operating, and every payment records itself.</p>
+          <p>Generate the invoice, send it, and accept payment &mdash; card or bank (eCheck) &mdash; through LawPay. Your clients open their portal, see exactly what was billed, and pay it there. Invoice payments go to operating, retainers go to trust, and every payment records itself.</p>
         </div>
         <div class="pay-grid">
           <div class="pay-card">
             <span class="eyebrow">In the client portal</span>
             <h3>Pay now, on the invoice</h3>
-            <p>Clients open an invoice in their portal, see exactly what was billed, and pay it by card. The payment lands on that invoice the moment it's accepted.</p>
+            <p>Clients open an invoice in their portal, see exactly what was billed, and pay it by card or bank (eCheck). Before a bank payment, LawPay shows its standard authorization. If the firm hasn't set up eCheck, the client sees a clear notice. The payment lands on that invoice the moment it's accepted.</p>
           </div>
           <div class="pay-card">
             <span class="eyebrow">From an email</span>
             <h3>Send a LawPay link</h3>
-            <p>One click on any invoice emails the client a LawPay link with the amount locked. Card or eCheck. When they pay, Lawmighty matches it and marks the invoice.</p>
+            <p>One click on any invoice emails the client a LawPay link with the amount locked. Card or bank (eCheck). When they pay, Lawmighty matches it and marks the invoice.</p>
           </div>
           <div class="pay-card">
             <span class="eyebrow">Retainers</span>
             <h3>Straight to trust</h3>
-            <p>Request a retainer by card and it goes to your <em>trust</em> account on LawPay's side &mdash; and onto the client's IOLTA ledger here only once it settles. It cannot be routed anywhere else.</p>
+            <p>Request a retainer by card or bank (eCheck) and it goes to your <em>trust</em> account on LawPay's side &mdash; and onto the client's IOLTA ledger here only once it settles. It cannot be routed anywhere else.</p>
           </div>
         </div>
         <div class="pay-trust">
@@ -591,8 +592,12 @@
             <h3 style="font-size:1.35rem;font-weight:normal;color:var(--navy-deep)">Built the way a lawyer would insist on</h3>
             <ul>
               <li><strong>Lawmighty never touches the money.</strong> Funds move between your client and your own LawPay accounts under your agreement with LawPay.</li>
-              <li><strong>Card numbers never reach us.</strong> They're entered in fields served by LawPay; we record the outcome.</li>
-              <li><strong>Trust and operating can't be crossed.</strong> You map each account once; invoice payments always go to operating, retainers always to trust.</li>
+              <li><strong>Card and bank details never reach us.</strong> They're handled by LawPay's secure fields; we record the outcome.</li>
+              <li><strong>LawPay's authorization, before a bank payment.</strong> Paying by bank (eCheck) shows the standard LawPay authorization first.</li>
+              <li><strong>Save a bank account and turn on autopay.</strong> Clients can keep a bank account on file and turn autopay on.</li>
+              <li><strong>A clear notice if eCheck isn't set up.</strong> If the firm hasn't set up eCheck, the client sees a clear notice.</li>
+              <li><strong>Separate trust and operating accounts.</strong> Invoice payments go to operating and retainers go to trust. You map each account once; the two can't be crossed.</li>
+              <li><strong>Refunds and voids show as refunded.</strong> A refund or void done in LawPay shows as refunded, and appears as its own line in firm records and the client portal.</li>
               <li><strong>Settled means settled.</strong> Every status you see comes from LawPay's own record, checked every hour.</li>
             </ul>
           </div>
@@ -600,7 +605,6 @@
             <img src="/lawpay-logo.svg" alt="LawPay">
             <p>Already on LawPay? <strong>Connect with LawPay</strong> from Firm Settings in about a minute. Not yet? We'll point you to the sign-up.</p>
             <a href="#early" class="btn btn-primary">Apply for access</a>
-            <p style="margin-top:0.9rem;font-size:0.8rem;color:#777">Rolling out to firms as LawPay completes certification of the integration.</p>
           </div>
         </div>
       </div>
@@ -664,17 +668,16 @@
               <li><strong>AI built into the workflow.</strong> <span>MightyDiscovery™ drafting and MightyAnalyzer™ production analysis are core features, not a premium upsell — metered per use, never a tier.</span></li>
               <li><strong>Real family-law substance.</strong> <span>TN child support calculator, parenting plan generator, and juvenile forms ship working.</span></li>
               <li><strong>No tier hostage-taking.</strong> <span>Trust accounting, client portal, and document generation are all in the base price.</span></li>
-              <li><strong>Native mobile apps — now live.</strong> <span>The iOS and Android apps are on the App&nbsp;Store and Google Play today, included in the flat price.</span>
+              <li><strong>Native mobile apps — now live.</strong> <span>The native iOS and Android apps are on the App&nbsp;Store and Google Play today, included in the flat price. They include a client portal where clients sign in to see their case, documents, messages and invoices. Paying an invoice opens securely in the phone's browser.</span>
                 <div class="store-badges">
                   <a href="https://apps.apple.com/us/app/lawmighty/id6794940293" target="_blank" rel="noopener"><img class="badge-apple" alt="Download on the App Store" src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"></a>
                   <a href="https://play.google.com/store/apps/details?id=com.lawmighty.app&amp;hl=en_US" target="_blank" rel="noopener"><img class="badge-play" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a>
                 </div>
               </li>
               <!-- pkg178 — LawPay -->
-              <li><strong>Built-in payments with LawPay.</strong> <span>Clients pay invoices by card in their portal or from an emailed link; retainers go straight to your trust account; every payment lands on the right ledger by itself. Firms already on LawPay <strong>Connect with LawPay</strong> in about a minute &mdash; Lawmighty never touches the money.</span>
+              <li><strong>Built-in payments with LawPay.</strong> <span>Clients pay invoices by card or bank (eCheck) in their portal or from an emailed link; invoice payments go to operating and retainers go to trust; every payment lands on the right ledger by itself. Firms already on LawPay <strong>Connect with LawPay</strong> in about a minute &mdash; Lawmighty never touches the money.</span>
                 <div class="store-badges" style="align-items:center;gap:10px">
                   <img src="/lawpay-logo.svg" alt="LawPay" style="height:22px;width:auto">
-                  <span style="font-size:12px;color:#777">Rolling out to firms as LawPay completes certification of the integration.</span>
                 </div>
               </li>
             </ul>

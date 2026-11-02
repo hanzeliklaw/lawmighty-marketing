@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- payments + mobile portal copy on / and /security/ — lastmod bumped 2026-11-01; /deck/ unchanged -->
 <!-- pkg157 — added /security/ — delivered 2026-08-18 -->
 <!-- pkg96 — added /deck/ — delivered 2026-07-18 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lawmighty.com/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,7 +17,7 @@
   </url>
   <url>
     <loc>https://lawmighty.com/security/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
