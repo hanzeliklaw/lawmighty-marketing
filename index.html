@@ -1,4 +1,4 @@
-<!-- follow us (Nov 2): homepage footer LinkedIn link gains its logo and is joined by Follow us links to X (https://x.com/LawMightyLLC) and YouTube (https://www.youtube.com/@LawMighty); inline brand SVGs, 16px, terra, target=_blank rel=noopener, aria-labels — delivered 2026-11-02 -->
+<!-- follow us (Nov 2): homepage footer LinkedIn link gains its logo and is joined by Follow us links to X (https://x.com/LawMightyLLC) and YouTube (https://www.youtube.com/@LawMighty); inline brand SVGs, 16px, footer text color on the navy footer, opacity on hover, cream focus outline, target=_blank rel=noopener, aria-labels — delivered 2026-11-02 -->
 <!-- payments live + mobile client portal (Nov 1): payments are a working feature — removed "Rolling out to firms as LawPay completes certification" and any coming-soon / in-testing payment wording; comparison checkmark kept; payment methods are "card or bank (eCheck)" everywhere (portal card, emailed link, retainers, wins bullet, partner band); Payments section adds the standard LawPay authorization before bank payments, saved bank account + autopay, a clear notice if the firm hasn't set up eCheck, refunds and voids done in LawPay showing as refunded on their own line in firm records and the client portal, and separate trust and operating accounts (invoices → operating, retainers → trust). Partner kicker "A proud 8am™ LawPay integration partner" unchanged. Native iOS and Android bullet and comparison row now say the apps include a client portal (case, documents, messages, invoices) and that paying an invoice opens securely in the phone's browser. deck/ and LawMighty-Overview.pdf not touched — delivered 2026-11-01 -->
 <!-- pkg183 — 8am request (Oct 14): the kicker's CSS uppercase was rendering "8AM™"; the brand name is now wrapped with text-transform:none so it reads "8am™" while the rest of the line stays uppercase — delivered 2026-10-14 -->
 <!-- pkg182 — 8am wording (Oct 8): first mention is exactly "A proud 8am™ LawPay integration partner"; later mentions stay plain "LawPay"; footer credit reads "8am™ and LawPay are trademarks of 8am, LLC" — delivered 2026-10-08 -->
@@ -222,9 +222,12 @@
   footer .disc { color: rgba(245,241,232,0.5); font-size: 0.74rem; max-width: 60ch; margin: 0.75rem auto 0; line-height: 1.5; }
   footer .follow { margin: 0.9rem auto 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.35rem 0.9rem; font-size: 0.74rem; }
   footer .follow-label { color: rgba(245,241,232,0.5); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; font-size: 0.68rem; }
-  footer .follow a { color: var(--terra); display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; }
-  footer .follow a:hover { color: var(--terra-light); }
-  footer .follow svg { width: 16px; height: 16px; display: block; fill: currentColor; flex: none; }
+  footer .follow a { color: var(--cream-2); background: transparent; box-shadow: none; display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+  footer .follow a:hover { opacity: 0.65; }
+  footer .follow a:focus { outline: none; }
+  footer .follow a:focus-visible { outline: 2px solid var(--cream-2); outline-offset: 3px; opacity: 1; }
+  footer .follow svg { width: 16px; height: 16px; display: block; flex: none; background: none; }
+  footer .follow svg path { fill: currentColor; }
 
   /* ───────── pkg178 v2 — LawPay partnership band + section ───────── */
   .lp-band { background: #fff; border-top: 4px solid var(--terra); border-bottom: 1px solid var(--cream-2); box-shadow: 0 6px 18px rgba(15,24,56,0.08); }
