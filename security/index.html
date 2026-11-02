@@ -1,3 +1,4 @@
+<!-- payments + client scope (Nov 1): clients see only their own matter on the web or in the mobile app; card and bank details are handled by LawPay's secure fields and never reach Lawmighty servers; payment notifications from LawPay are confirmed with LawPay before they change anything. Replaces the Stripe-hosted checkout sentence — delivered 2026-11-01 -->
 <!-- pkg157 — NEW PAGE: /security/ — the plain-English security story for skeptical attorneys (the cold-email landing companion): database-enforced tenant isolation (fail-closed), encryption in transit + at rest (AES-256 incl. backups, verified against Render managed-Postgres docs), role-based access + activity logging, login protections + on-device biometrics, AI confidentiality (firm owns Firm Data, never sold, never used to train models, Anthropic under commercial API terms, user-initiated only), Stripe-hosted payments, and the honest-limits close aligned with the Terms; deliberately NO claims of MFA / pen testing / SOC 2 (not yet true — add only when they are). Design tokens and footer mirror index.html — delivered 2026-08-18 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +83,7 @@
     <section class="block">
       <h2>Inside your firm, access is role-based</h2>
       <ul>
-        <li><strong>Clients see only their own matter.</strong> A client logging into the portal sees the forms, dates, and documents shared with them &mdash; never anything about another client.</li>
+        <li><strong>Clients see only their own matter.</strong> On the web or in the mobile app, a client sees only their own matter &mdash; never anything about another client.</li>
         <li><strong>Staff access is permission-based.</strong> You decide what your staff can do; sensitive abilities are separate permissions you grant deliberately.</li>
         <li><strong>Actions are logged.</strong> Significant actions in your firm's account are recorded &mdash; who did what, and when &mdash; so there's always an answer to that question.</li>
       </ul>
@@ -111,7 +112,7 @@
 
     <section class="block">
       <h2>Payments</h2>
-      <p>All payments run through Stripe's own hosted checkout &mdash; <strong>your card number never touches Lawmighty's servers</strong>. Card storage, receipts, and payment security are handled by Stripe.</p>
+      <p>Card and bank details are handled by LawPay's secure fields and <strong>never reach Lawmighty's servers</strong>. Payment notifications from LawPay are confirmed with LawPay before they change anything.</p>
     </section>
 
     <section class="block">
