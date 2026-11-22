@@ -1,0 +1,27 @@
+# Permanent redirects so the Google OAuth consent-screen URLs
+# https://lawmighty.com/privacy and https://lawmighty.com/terms
+# reach the app legal pages.
+
+[[redirects]]
+  from = "/privacy"
+  to = "https://app.lawmighty.com/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy/"
+  to = "https://app.lawmighty.com/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "https://app.lawmighty.com/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms/"
+  to = "https://app.lawmighty.com/terms"
+  status = 301
+  force = true
