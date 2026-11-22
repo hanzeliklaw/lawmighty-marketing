@@ -1,3 +1,4 @@
+<!-- privacy + terms (Nov 22): footer links to /privacy and /terms; Netlify 301 redirects send those URLs to the app legal pages so the Google OAuth consent-screen URLs reach https://app.lawmighty.com/privacy and https://app.lawmighty.com/terms — delivered 2026-11-22 -->
 <!-- payments + client scope (Nov 1): clients see only their own matter on the web or in the mobile app; card and bank details are handled by LawPay's secure fields and never reach Lawmighty servers; payment notifications from LawPay are confirmed with LawPay before they change anything. Replaces the Stripe-hosted checkout sentence — delivered 2026-11-01 -->
 <!-- pkg157 — NEW PAGE: /security/ — the plain-English security story for skeptical attorneys (the cold-email landing companion): database-enforced tenant isolation (fail-closed), encryption in transit + at rest (AES-256 incl. backups, verified against Render managed-Postgres docs), role-based access + activity logging, login protections + on-device biometrics, AI confidentiality (firm owns Firm Data, never sold, never used to train models, Anthropic under commercial API terms, user-initiated only), Stripe-hosted payments, and the honest-limits close aligned with the Terms; deliberately NO claims of MFA / pen testing / SOC 2 (not yet true — add only when they are). Design tokens and footer mirror index.html — delivered 2026-08-18 -->
 <!DOCTYPE html>
@@ -132,7 +133,7 @@
 <footer>
   <p>&copy; 2026 LawMighty, LLC. All rights reserved. &nbsp;&middot;&nbsp; <span class="accent">Built in Tennessee.</span></p>
   <p class="disc">LawMighty is a product of LawMighty, LLC, a Tennessee limited liability company.</p>
-  <p class="disc"><a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/deck/">View the deck</a> &nbsp;&middot;&nbsp; <a href="/LawMighty-Overview.pdf">Download the overview (PDF)</a></p>
+  <p class="disc"><a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a> &nbsp;&middot;&nbsp; <a href="/deck/">View the deck</a> &nbsp;&middot;&nbsp; <a href="/LawMighty-Overview.pdf">Download the overview (PDF)</a></p>
 </footer>
 
 </body>
